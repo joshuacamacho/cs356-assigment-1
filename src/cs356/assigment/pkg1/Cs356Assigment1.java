@@ -15,10 +15,13 @@ public class Cs356Assigment1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Student t = new Student();
-        Student d = new Student();
-        Student e = new Student();
+        MultipleChoiceQuestion j = new MultipleChoiceQuestion();
+        j.setQuestion("How many?");
+        j.addAnswer("A", "Many");
+        j.addAnswer("B", "None");
+        j.addAnswer("C", "A few");
+        j.addAnswer("D", "Butts");
+        j.print();
     }
     
 }
