@@ -16,6 +16,9 @@ public class Cs356Assigment1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Student t = new Student();
+        Student d = new Student();
+        Student e = new Student();
     }
     
 }
