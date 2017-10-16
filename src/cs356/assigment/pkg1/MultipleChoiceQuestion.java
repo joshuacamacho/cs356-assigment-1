@@ -5,6 +5,7 @@
  */
 package cs356.assigment.pkg1;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -13,39 +14,23 @@ import java.util.Set;
  *
  * @author Josh
  */
-public class MultipleChoiceQuestion implements Question{
-    private String question;
-    private Map answers;
-    
+public class MultipleChoiceQuestion extends Question{
     MultipleChoiceQuestion(){
-        answers = new LinkedHashMap();
+        super();
     }
     
-    @Override
-    public void setQuestion(String question){
-        this.question = question;
-    }
-    
-    @Override
-    public void addAnswer(String key, String answer){
-        answers.put(key, answer);
-    }
-
-    @Override
-    public String get(){
-        return question;
-    }
-
-    @Override
-    public void answer(){
+    //Add multiple possible answers to the submission set
+    public void addSubmission(String[] keys, String studentID){
+        pruneSubmissions(studentID);
+        for(String val : keys){
+            if(submissionSet.containsKey(val)){
+            ArrayList<String> currentSubmissions = (ArrayList<String>) submissionSet.get(val);
+            currentSubmissions.add(studentID);
+            submissionSet.put(val, currentSubmissions);
+        }else{
+            System.out.println("Incorrect Submission");
+        }
+        }
         
-    }
-    
-    @Override
-    public void print(){
-        System.out.println(question);
-        answers.forEach((k,v)->{
-           System.out.println(k+". "+v);
-        });
     }
 }
