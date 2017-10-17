@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author Josh
  */
-public class Cs356Assigment1 {
+public class SimulationDriver {
 
     /**
      * @param args the command line arguments
