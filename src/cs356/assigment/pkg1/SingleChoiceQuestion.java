@@ -16,9 +16,9 @@ public class SingleChoiceQuestion extends Question {
         super();
     }
     //Adds to the submission set by studentID
-    public void addSubmission(String key, String studentID){
+    public void addSubmission(String key, String studentID,SubmissionSet submissionSet){
         if(submissionSet.containsKey(key)){
-            pruneSubmissions(studentID);
+            submissionSet.pruneSubmissions(studentID);
             ArrayList<String> currentSubmissions = (ArrayList<String>) submissionSet.get(key);
             currentSubmissions.add(studentID);
             submissionSet.put(key, currentSubmissions);

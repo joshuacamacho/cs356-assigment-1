@@ -20,8 +20,10 @@ public class MultipleChoiceQuestion extends Question{
     }
     
     //Add multiple possible answers to the submission set
-    public void addSubmission(String[] keys, String studentID){
-        pruneSubmissions(studentID);
+    @Override
+    public void addSubmission(String key, String studentID, SubmissionSet submissionSet){
+        String[] keys = key.split(" ");
+        submissionSet.pruneSubmissions(studentID);
         for(String val : keys){
             if(submissionSet.containsKey(val)){
             ArrayList<String> currentSubmissions = (ArrayList<String>) submissionSet.get(val);

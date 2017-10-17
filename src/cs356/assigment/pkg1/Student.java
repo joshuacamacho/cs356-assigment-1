@@ -16,8 +16,10 @@ public class Student {
         count=0;
     }
     Student(){
-        System.out.println(count);
         count++;
         id=Integer.toString(count);
+    }
+    public String getId(){
+        return id;
     }
 }
